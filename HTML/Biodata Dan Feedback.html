@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+ <title>Tabel dan Formulir</title>
+</head>
+<body>
+    <h1>Biodata Saya</h1>
+    <table border="3"> <thead>
+ <tr>
+ <th>No.</th>
+ <th>Nama</th>
+ <th>Tempat Tanggal Lahir</th>
+ <th>Alamat</th>
+ <th>Sekolah</th>
+ <th>Telepon</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>1</td>
+ <td>Alvin Rizky</td>
+ <td>Nganjuk-20 Januari 2008</td>
+ <td>Jl.Dusun warungotok 2</td>
+ <td>SMKN 1 Nganjuk</td>
+ <td>087831890493</td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+
+<h1>Formulir Feedback</h1>
+ <form action="/submit-form" method="post">
+ <label for="nama">Nama Lengkap:</label><br>
+ <input type="text" id="nama" name="nama" placeholder="Masukkan nama
+ anda"><br><br>
+
+<label for="email">Email:</label><br>
+ <input type="email" id="email" name="email"
+   placeholder="Masukkan email anda"><br><br>
+
+<label for="pesan">Saran Dan Kritik:</label><br>
+ <textarea id="pesan" name="pesan" rows="4" cols="50" placeholder="isi saran/komentar anda disini"></textarea><br><br>
+
+ <label for="gender">Apakah anda puas dengan materi ini:</label><br>
+ <input type="radio" id="Ya" name="gender" value="Ya">
+ <label for="pria">Ya</label><br>
+ <input type="radio" id="Netral" name="gender" value="Netral">
+ <label for="Netral">Netral</label><br>
+ <input type="radio" id="Tidak" name="gender" value="Tidak">
+ <label for="Tidak">Tidak</label><br><br>
+
+ <label for="Topik">Topik yang ingin dipelajari selanjutnya:</label><br>
+ <input type="checkbox" id="HTML" name="Topik[]" value="HTML">
+ <label for="coding">HTML</label><br>
+ <input type="checkbox" id="CSS" name="Topik[]" value="CSS">
+ <label for="desain">CSS</label><br>
+ <input type="checkbox" id="PYTHON" name="Topik[]" value="PYTHON">
+ <label for="menulis">PYTHON</label><br><br>
+
+ <input type="Submit" value="Submit">
+      </form>
+    </body>
+ </html>
