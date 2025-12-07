@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kalkulator Sederhana</title>
+</head>
+<body>
+    <h1>Kalkulator Sederhana</h1>
+
+    <input type="number" id="angka1" placeholder="Angka 1">
+    <input type="number" id="angka2" placeholder="Angka 2">
+
+    <div>
+        <button onclick="tambah()">Tambah</button>
+        <button onclick="kurang()">Kurang</button>
+        <button onclick="kali()">Kali</button>
+        <button onclick="bagi()">Bagi</button>
+    </div>
+
+    <p id="hasilKalkulasi"></p>
+
+    <script>
+        function getValues() {
+            const a = Number(document.getElementById('angka1').value);
+            const b = Number(document.getElementById('angka2').value);
+            return { a, b };
+        }
+
+        function tampilkanHasil(text) {
+            document.getElementById('hasilKalkulasi').textContent = text;
+        }
+
+        function tambah() {
+            const { a, b } = getValues();
+            if (isNaN(a) || isNaN(b)) return tampilkanHasil('Masukkan kedua angka terlebih dahulu.');
+            tampilkanHasil('Hasil: ' + (a + b));
+        }
+
+        function kurang() {
+            const { a, b } = getValues();
+            if (isNaN(a) || isNaN(b)) return tampilkanHasil('Masukkan kedua angka terlebih dahulu.');
+            tampilkanHasil('Hasil: ' + (a - b));
+        }
+
+        function kali() {
+            const { a, b } = getValues();
+            if (isNaN(a) || isNaN(b)) return tampilkanHasil('Masukkan kedua angka terlebih dahulu.');
+            tampilkanHasil('Hasil: ' + (a * b));
+        }
+
+        function bagi() {
+            const { a, b } = getValues();
+            if (isNaN(a) || isNaN(b)) return tampilkanHasil('Masukkan kedua angka terlebih dahulu.');
+            if (b === 0) return tampilkanHasil('Error: Pembagian dengan nol.');
+            tampilkanHasil('Hasil: ' + (a / b));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Daftar Belanja</title>
+</head>
+<body>
+    <h1>Daftar Belanja Anda</h1>
+
+    <ul id="itemsBelanja"></ul>
+
+    <input type="text" id="newItem" placeholder="Tambahkan item baru">
+    <button onclick="tambahItem()">Tambah Item</button>
+    <button onclick="hapusItemTerakhir()">Hapus Item Terakhir</button>
+
+    <p id="jumlahItem">Jumlah item: 0</p>
+
+    <script>
+        function updateCount() {
+            const count = document.querySelectorAll('#itemsBelanja li').length;
+            document.getElementById('jumlahItem').textContent = 'Jumlah item: ' + count;
+        }
+
+        function tambahItem() {
+            const input = document.getElementById('newItem');
+            const val = input.value.trim();
+            if (!val) return;
+            const li = document.createElement('li');
+            li.textContent = val;
+            document.getElementById('itemsBelanja').appendChild(li);
+            input.value = '';
+            updateCount();
+        }
+
+        function hapusItemTerakhir() {
+            const ul = document.getElementById('itemsBelanja');
+            if (ul.lastElementChild) ul.removeChild(ul.lastElementChild);
+            updateCount();
+        }
+
+    
+        document.getElementById('newItem').addEventListener('keydown', function(e){
+            if (e.key === 'Enter') tambahItem();
+        });
+    </script>
+</body>
+</html>
